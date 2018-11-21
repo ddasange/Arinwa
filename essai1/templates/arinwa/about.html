@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block title %} {% trans 'A propos de nous' %} {% endblock title %}
+
+{% block document %}
+	{% for categorie in categories %}
+         <a class="dropdown-item" href="{% url 'documents' categorie.id %}">{% trans categorie.nom %}</a>
+    {% endfor %}
+{% endblock document %}
+
+{% block pays %}
+	{% for country in pays %}
+		<a class="dropdown-item" href="{% url 'lois' country.id %}">{% trans country.nom %}</a>
+	{% endfor %}
+{% endblock pays %}
+
+{% block mainpage %}
+	<ol class="breadcrumb monbread" id="breadcrumbList">
+        <li class="breadcrumb-item">
+          <a href="/arinwa/accueil/">{% trans 'Accueil' %}</a>
+        </li>
+        <li class="breadcrumb-item active">{% trans 'A propos' %}</li>
+      </ol>
+	<!-- Intro Content -->
+      <div class="row">
+        <div class="col-lg-6">
+        	<a class = "thumbnail" href = "#">
+        		<img  class="img-fluid rounded mb-4" src="{{ image }}" alt="">
+        	</a>
+          
+        </div>
+        <div class="col-lg-6">
+          <h2>{% trans 'A propos de nous' %}</h2>
+          {% for propos in about %}
+          	<p> {{ propos.contenu|linebreaks }} </p>
+
+            <h3 style="text-align: center">QUEL EST LE BUT DE ARINWA </h3>
+            <p> {{ propos.le_but|linebreaks }} </p>
+
+            <h3 style="text-align: center">COMBIEN DE JURIDICTION SONT MEMBRES </h3>
+            <p> {{ propos.juri_membre|linebreaks }} </p>
+
+            <h3 style="text-align: center">QUI PEUT UTILISER ARINWA</h3>
+            <p> {{ propos.qui_peut_user|linebreaks }} </p>
+
+          	
+          {% endfor %}
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Team Members -->
+      <<!-- h2>{% trans 'Notre équipe' %}</h2>
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+            <div class="card-body">
+              <h4 class="card-title">{% trans 'Membre' %} </h4>
+              <h6 class="card-subtitle mb-2 text-muted">{% trans 'Position' %}</h6>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#">name@example.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+            <div class="card-body">
+              <h4 class="card-title">{% trans 'Membre' %}</h4>
+              <h6 class="card-subtitle mb-2 text-muted">{% trans 'Position' %}</h6>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#">name@example.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+            <div class="card-body">
+              <h4 class="card-title">{% trans 'Membre' %}</h4>
+              <h6 class="card-subtitle mb-2 text-muted">{% trans 'Position' %}</h6>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#">name@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- /.row -->
+{% endblock mainpage %}

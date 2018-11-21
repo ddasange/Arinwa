@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block title %} Documents de récommandations {% endblock title %}
+
+
+{% block document %}
+	{% for categorie in categories %}
+         <a class="dropdown-item" href="{% url 'documents' categorie.id %}">{% trans categorie.nom %}</a>
+    {% endfor %}
+{% endblock document %}
+
+{% block pays %}
+	{% for country in pays %}
+		<a class="dropdown-item" href="{% url 'lois' country.id %}">{% trans country.nom %}</a>
+	{% endfor %}
+{% endblock pays %}
+
+{% block mainpage %}
+	<ol class="breadcrumb" id="breadcrumbList">
+        <li class="breadcrumb-item">
+          <a href="/arinwa/accueil/">{% trans 'Accueil' %}</a>
+        </li>
+        <li class="breadcrumb-item">{% trans 'Documents' %}</li>
+        {% for categorie in categorie %}
+        	{% if document_actuel == categorie.id  %}
+        		<li class="breadcrumb-item">{% trans categorie.nom %}</li>
+        	{% endif %}
+        {% endfor %}
+        
+      </ol>
+      
+      <div class="container">
+      	<div class="row">
+      		<div class="col-lg-3 mb-4">
+	          <div class="list-group">
+	          	{% for categorie in categories %}
+	            	<a href="{% url 'documents' categorie.id %}" class="list-group-item">{% trans categorie.nom %}</a>
+	            {% endfor %}
+	          </div>
+        	</div>
+      	<div class="col-lg-9 mb-8">
+      		
+      		<div id="recherche">
+      			<form>
+      				<div class="form">
+      					<div class="form-group ">
+      						<label for="pays" class="col-lg-2 mb-1">Pays</label>
+	      					<select id="pays" class="form-contol col-lg-7 mb-5">
+	      						<option>{% trans "Côte d'Ivoire" %}</option>
+	      						<option>{% trans 'Ghana' %}</option>
+	      						<option>{% trans 'Liberia' %}</option>
+	      						<option>{% trans 'Nigeria' %}</option>
+	      					</select>
+      					</div>
+      					<button type="submit" class="btn btn-search bouton">{% trans 'Recheche' %}</button>
+      				</div>
+      			</form>
+      		</div>
+      		<div>
+      			<table class= "table table-hover">
+      				<thead>
+      					<tr>
+      						<th scope="col">{% trans 'Pays' %}</th>
+      						<th scope="col">{% trans 'Description' %}</th>
+      						<th scope="col">{% trans 'Date de publication' %}</th>
+      					</tr>
+      				</thead>
+      				<tbody>
+      					{% for document in documents %}
+      						<tr>
+      						<td>{{document.pays}}</td>
+	      					<td><a href="{% url 'downloads' document.id %}"> {{document.titre}}</a></td>
+	      					<td>{{document.date}}</td>
+      					</tr>
+      					{% endfor %}
+      				</tbody>
+      			</table>
+      		</div>
+      		<!-- Pagination -->
+          <div>
+          	<span class = "current">
+		  	  	Page {{ documents.number }} Sur {{ documents.paginator.num_pages }}
+		  	</span>
+		  	  	<ul class="pagination justify-content-center mb-4">
+		            <li class = page-item>
+		  			{% if documents.has_previous %}
+		  	  		<a class = "page-link" href = "{% url 'documents' documents.previous_page_number %}" aria-label="Previous">
+		  	  			<span aria-hidden="true">&laquo;</span>
+            			<span class="sr-only">{% trans 'Précédent' %}</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  		</li>
+		  		{% if suivant1 <= documents.paginator.num_pages %}
+			  	  	<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant1 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant2 <= documents.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant2 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant3 <= documents.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant3 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant4 <= documents.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant4 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant5 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant5 }}</a>
+	        		</li>
+	        	{% endif %}
+		  	  	
+		  	  	
+		  	  	
+		  	  	<li class = "page-item" style="justify-content: right">
+		  	  		{% if actualites.has_next %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.next_page_number %}" aria-label="Next">
+		  	  			<span aria-hidden="true">&raquo;</span>
+            			<span class="sr-only">{% trans 'Suivant' %}</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  	  	</li>
+          	</ul>
+		  	 
+          </div>
+      	</div>
+      	</div>
+      </div>
+{% endblock mainpage %}

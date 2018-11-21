@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %} {{ downloads.titre }} {% endblock title %}
+
+{% block document %}
+	{% for categorie in categories %}
+         <a class="dropdown-item" href="{% url 'documents' categorie.id %}">{{ categorie.nom }}</a>
+    {% endfor %}
+{% endblock document %}
+
+{% block pays %}
+	{% for country in pays %}
+		<a class="dropdown-item" href="{% url 'lois' country.id %}">{{ country.nom }}</a>
+	{% endfor %}
+{% endblock pays %}
+
+{% block mainpage %}
+	<!-- Page Heading/Breadcrumbs -->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">accueil</a>
+        </li>
+        <li class="breadcrumb-item">Lois des pays membres</li>
+        <li class="breadcrumb-item active">loi</li>
+      </ol>
+      
+      <div class="container">
+      	<div class="row">
+      		<div class="col-lg-3 mb-4">
+	          <div class="list-group">
+	          	{% for country in pays %}
+	            	<a href="{% url 'lois' country.id %}" class="list-group-item">{{ country.nom }}</a>
+	            {% endfor %}
+	          </div>
+        	</div>
+        	<div class="col-lg-9 mb-8">
+        		<div class="jumbotron">
+        			<h4 class="display-my">{{ downloads.titre }}</h4>
+        			<p class="lead">{{ downloads.date }}</p>
+        			<hr class="my-4">
+        			<p class = "small">{{ downloads.contenu.name }}</p>
+        			<a class="btn btn-primary btn-lg" href="{{ downloads.contenu.url }}" target="_blank" role="button">Télécharger le document</a>
+        		</div>
+        	</div>
+      	</div>
+      </div>
+{% endblock mainpage %}

@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+
+{% block title %} Documents de récommandations {% endblock title %}
+
+
+{% block document %}
+	{% for categorie in categories %}
+         <a class="dropdown-item" href="{% url 'documents' categorie.id %}">{{ categorie.nom }}</a>
+    {% endfor %}
+{% endblock document %}
+
+{% block pays %}
+	{% for country in pays %}
+		<a class="dropdown-item" href="{% url 'lois' country.id %}">{{ country.nom }}</a>
+	{% endfor %}
+{% endblock pays %}
+
+{% block mainpage %}
+	<ol class="breadcrumb" id="breadcrumbList">
+        <li class="breadcrumb-item">
+          <a href="/arinwa/accueil/">Accueil</a>
+        </li>
+        <li class="breadcrumb-item">Lois des pays membres</li>
+        {% for categorie in categorie %}
+        	{% if document_actuel == categorie.id  %}
+        		<li class="breadcrumb-item">{{ categorie.nom }}</li>
+        	{% endif %}
+        {% endfor %}
+        
+      </ol>
+      
+      <div class="container">
+      	<div class="row">
+      		<div class="col-lg-3 mb-4">
+	          <div class="list-group">
+	          	{% for country in pays %}
+	            	<a href="{% url 'lois' country.id %}" class="list-group-item">{{ country.nom }}</a>
+	            {% endfor %}
+	          </div>
+        	</div>
+      	<div class="col-lg-9 mb-8">
+      		
+      		<div>
+      			<table class= "table table-hover">
+      				<thead>
+      					<tr>
+      						<th scope="col">Pays</th>
+      						<th scope="col">Description</th>
+      						<th scope="col">Date de publication</th>
+      					</tr>
+      				</thead>
+      				<tbody>
+      					{% for law in lois %}
+      						<tr>
+      						<td>{{ law.pays }}</td>
+	      					<td><a href="{% url 'telechargements' law.id %}">{{ law.titre }}</a></td>
+	      					<td>{{ law.date }}</td>
+      					</tr>
+      					{% endfor %}
+      				</tbody>
+      			</table>
+      		</div>
+      		<!-- Pagination -->
+          <div>
+          	<span class = "current">
+		  	  	Page {{ documents.number }} Sur {{ documents.paginator.num_pages }}
+		  	</span>
+		  	  	<ul class="pagination justify-content-center mb-4">
+		            <li class = page-item>
+		  			{% if documents.has_previous %}
+		  	  		<a class = "page-link" href = "{% url 'documents' documents.previous_page_number %}" aria-label="Previous">
+		  	  			<span aria-hidden="true">&laquo;</span>
+            			<span class="sr-only">Précédente</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  		</li>
+		  		{% if suivant1 <= documents.paginator.num_pages %}
+			  	  	<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant1 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant2 <= documents.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant2 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant3 <= documents.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant3 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant4 <= documents.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'documents' documents.next_page_number %}">{{ suivant4 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant5 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant5 }}</a>
+	        		</li>
+	        	{% endif %}
+		  	  	
+		  	  	
+		  	  	
+		  	  	<li class = "page-item" style="justify-content: right">
+		  	  		{% if actualites.has_next %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.next_page_number %}" aria-label="Next">
+		  	  			<span aria-hidden="true">&raquo;</span>
+            			<span class="sr-only">Suivante</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  	  	</li>
+          	</ul>
+		  	 
+          </div>
+      	</div>
+      	</div>
+      </div>
+{% endblock mainpage %}

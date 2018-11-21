@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+{% include 'new/_header.html'%}
+<div class="container">
+<div class="row" style="margin-top: 100px">
+    <div class="services" style="margin-top: 20px; margin-bottom: 50px;">
+		<div class="col-md-4">
+			<a class = "thumbnail"  href = "#">
+        		<img  class="img-fluid rounded mb-4" style="height: 400px" src="{{ image }}" alt="">
+        	</a>
+		</div>
+		<div class="col-md-6">
+          <h2>{% trans 'A propos de nous' %}</h2>
+          {% for propos in about %}
+          	<p> {{ propos.contenu|linebreaks }} </p><hr>
+
+            <h4>QUEL EST LE BUT DE ARINWA </h4>
+            <p> {{ propos.le_but|linebreaks }} </p><hr>
+
+            <h4>COMBIEN DE JURIDICTION SONT MEMBRES </h4>
+            <p> {{ propos.juri_membre|linebreaks }} </p><hr>
+
+            <h4>QUI PEUT UTILISER ARINWA</h4>
+            <p> {{ propos.qui_peut_user|linebreaks }} </p><hr>
+          {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% include 'new/_footer.html'%}

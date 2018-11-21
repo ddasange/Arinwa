@@ -1,0 +1,111 @@
+ <div id="pagination">
+ 	{% block pagination %}
+		  	<span class = "current">
+		  	  	Page {{ actualites.number }} Sur {{ actualites.paginator.num_pages }}
+		  	 </span>
+		  	 <div class="container">
+		  	 	<ul class="pagination justify-content-center">
+		  		
+		  		<li class = page-item>
+		  			{% if actualites.has_previous %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.previous_page_number %}" aria-label="Previous">
+		  	  			<span aria-hidden="true">&laquo;</span>
+            			<span class="sr-only">Précédente</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  		</li>
+		  		{% if suivant1 <= actualites.paginator.num_pages %}
+			  	  	<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant1 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant2 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant2 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant3 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant3 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant4 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant4 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant5 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant5 }}</a>
+	        		</li>
+	        	{% endif %}
+		  	  	
+		  	  	
+		  	  	
+		  	  	<li class = "page-item" style="justify-content: right">
+		  	  		{% if actualites.has_next %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.next_page_number %}" aria-label="Next">
+		  	  			<span aria-hidden="true">&raquo;</span>
+            			<span class="sr-only">Suivante</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  	  	</li>
+		  	  	
+		  	</ul>
+		  	 </div>
+		  </div> <div>
+		  	<span class = "current">
+		  	  	Page {{ actualites.number }} Sur {{ actualites.paginator.num_pages }}
+		  	 </span>
+		  	 <div class="container">
+		  	 	<ul class="pagination justify-content-center">
+		  		
+		  		<li class = page-item>
+		  			{% if actualites.has_previous %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.previous_page_number %}" aria-label="Previous">
+		  	  			<span aria-hidden="true">&laquo;</span>
+            			<span class="sr-only">Précédente</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  		</li>
+		  		{% if suivant1 <= actualites.paginator.num_pages %}
+			  	  	<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant1 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant2 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant2 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant3 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant3 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant4 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant4 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant5 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant5 }}</a>
+	        		</li>
+	        	{% endif %}
+		  	  	
+		  	  	
+		  	  	
+		  	  	<li class = "page-item" style="justify-content: right">
+		  	  		{% if actualites.has_next %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.next_page_number %}" aria-label="Next">
+		  	  			<span aria-hidden="true">&raquo;</span>
+            			<span class="sr-only">Suivante</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  	  	</li>
+		  	  	
+		  	</ul>
+		  	 </div>
+		  	 {% endblock pagination %}
+		  </div>

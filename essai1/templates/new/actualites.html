@@ -1,0 +1,23 @@
+{% load static %}
+{% include 'new/_header.html'%}
+<div class="container">
+<div class="row" style="margin-top: 100px">
+    <div class="services" style="margin-top: 20px; margin-bottom: 50px;">
+        {% for actualite in actualites_list %}
+	        <div class="service col-md-3 col-sm-6 col-xs-12 wow bounceInLeft" data-wow-delay="0.2s">
+	           <div class="row">
+	               <div class="col-md-12 image-fluid">
+	                   {{actualite.contenu | truncatewords:10}}
+	               </div><hr>
+	               <div class="col-md-12">
+	                   <p class="pull-right">{{actualite.date}}</p>
+	               </div>
+	           </div>
+	            <a href="/arinwa/actualite/{{actualite.id}}/" class="btn btn-outline btn-primary btn-medium btn-rounded wow bounceInUp" data-wow-delay="0.1s">voir plus</a>
+	        </div>
+        {%endfor%}
+    </div>
+</div>
+</div>
+
+{% include 'new/_footer.html'%}

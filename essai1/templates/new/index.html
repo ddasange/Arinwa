@@ -1,0 +1,142 @@
+{%load static%}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARINWA</title>
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+
+    <!-- Le styles -->
+    <link href="{% static 'new/stylesheets/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'new/stylesheets/animate.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'new/stylesheets/StrokeGap.css' %}" type="text/css">
+    <link href="{% static 'new/stylesheets/style.css' %}" rel="stylesheet" type="text/css" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>      <script src="../assets/js/html5shiv.js"></script>    <![endif]-->
+
+    <style>
+        body{
+            overflow: hidden;
+            background-color: white;
+        }
+        h3 {
+            font-size: 1em;
+            text-transform: uppercase;
+            color: #777;
+        }
+        h4 {
+            text-transform: uppercase;
+            font-size: 1em;
+            font-weight: 700;
+        }
+        .top {
+            padding: 100px 0;
+        }
+        img {
+            margin: auto;
+        }
+        span {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloading">
+      <img class="loading-gif" src="{% static 'new/images/loading.svg' %}" alt="preloader">
+    </div>
+
+    <div class="container text-center top animated bounceInDown">
+        <img src="{% static 'new/Logo/logo_arinsa.png' %}" alt="" class="img-responsive">
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="card mb-4 col-md-4">
+          
+                <a href = "/arinwa/langue/fr" id="btnFrancais"><h4><button type="button" class="btn btn-md btn-block" style="background-color: yellow">{% trans 'Francais' %}</button></h4></a>
+        
+            </div>
+            <div class="card mb-4 col-md-4">
+          
+                <a href = "/arinwa/langue/en" id="btnAnglais"><h4><button type="button" class="btn btn-md btn-block btn-danger">{% trans 'Anglais' %}</button></h4></a>
+        
+            </div>
+            <div class="card mb-4 col-md-4">
+          
+                <a href = "/arinwa/langue/pt" id="btnPortugais"><h4><button type="button" class="btn btn-md btn-block btn-success">{% trans 'Portugais' %}</button></h4></a>
+        
+            </div>
+        </div>
+        <h3 id="afficher" style="text-align: center"></h3>
+    </div>
+
+    <script src="{% static 'new/javascripts/modernizr.js' %}"></script>
+    <script src="{% static 'new/javascripts/jquery.js' %}"></script>
+
+
+<!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-40566302-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+<!-- for demo index page only -->
+    <script>
+        if (!Modernizr.smil) 
+        {
+            $("img[src$='.svg']")
+                .attr("src", "images/preloading.gif");
+        }
+        $(window).load(function() 
+        {
+            "use strict";
+            $('.loading-gif').delay().fadeOut('slow');
+            $('.preloading').delay().fadeOut('slow');
+            $('body').delay(500);
+        });
+
+        var btnFrancais = document.getElementById('btnFrancais');
+        var btnAnglais = document.getElementById('btnAnglais');
+        var btnPortugais = document.getElementById('btnPortugais');
+        
+        var afficher = document.getElementById('afficher');
+        
+        btnFrancais.onmouseover = function(){
+            afficher.innerHTML = "<p> Bienvenue sur le site d'<strong>ARINWA</strong>, cliquez sur la langue pour l'activer ! </p>";
+        }
+        
+        btnFrancais.onmouseout = function(){
+            afficher.innerHTML = "";
+        }
+        
+        btnAnglais.onmouseover = function(){
+            afficher.innerHTML = "<p>Welcome to <strong>ARINWA</strong>'s website, click the language for activated!</p>";
+        }
+        
+        btnAnglais.onmouseout = function(){
+            afficher.innerHTML = "";
+        }
+        
+        btnPortugais.onmouseover = function(){
+            afficher.innerHTML = "<p>Bem vindo ao site da <strong>ARINWA</strong>, pressione o idioma para ativado!</p>";
+        }
+        
+        btnPortugais.onmouseout = function(){
+            afficher.innerHTML = "";
+        }
+    </script>
+
+</body>
+
+</html>

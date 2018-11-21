@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %} Actualités {% endblock title %}
+
+
+{% block document %}
+	{% for categorie in categories %}
+         <a class="dropdown-item" href="{% url 'documents' categorie.id %}">{{ categorie.nom }}</a>
+    {% endfor %}
+{% endblock document %}
+
+{% block pays %}
+	{% for country in pays %}
+		<a class="dropdown-item" href="{% url 'lois' country.id %}">{{ country.nom }}</a>
+	{% endfor %}
+{% endblock pays %}
+
+{% block mainpage %}
+	<ol class="breadcrumb" id="breadcrumbList">
+        <li class="breadcrumb-item">
+          <a href="/arinwa/accueil/">Accueil</a>
+        </li>
+        <li class="breadcrumb-item active">Actualités</li>
+      </ol>
+      
+      <div class="container">
+      	
+      	<div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+          <!-- Blog Post -->
+          {% for actualite in actualites %}
+	          <div class="card mb-4">
+	          	<a class = "thumbnail" href = "#">
+	          		<img class="card-img-top" src="{{actualite.image.url}}" alt="Card image cap">
+	          	</a>
+	            <div class="card-body">
+	              <h2 class="card-title">{% blocktrans with actualite_t=actualite.titre %} {{ actualite_t }} {% endblocktrans %}</h2>
+	              <p class="card-text">
+	              	{% blocktrans with actualite_c=actualite.contenu|truncatewords:50 %}
+						
+						{{ actualite_c }}
+					{% endblocktrans %}
+	              </p>
+	              <a href="{% url 'actualite' actualite.id %}" class="btn btn-primary">En savoir plus &rarr;</a>
+	            </div>
+	            <div class="card-footer text-muted">
+	            	{% blocktrans with actualite_d=actualite.date %}
+	              		Publié le, {{ actualite_d }}
+	              	{% endblocktrans %}
+	            </div>
+	          </div>
+	        {% empty %}
+				<p>{% trans "Aucune actualité pour le moment, merci !" %} </p>
+			{% endfor %}
+
+          <!-- Pagination -->
+          <div>
+          	<span class = "current">
+		  	  	Page {{ actualites.number }} Sur {{ actualites.paginator.num_pages }}
+		  	</span>
+		  	  	<ul class="pagination justify-content-center mb-4">
+		            <li class = page-item>
+		  			{% if actualites.has_previous %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.previous_page_number %}" aria-label="Previous">
+		  	  			<span aria-hidden="true">&laquo;</span>
+            			<span class="sr-only">Précédente</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  		</li>
+		  		{% if suivant1 <= actualites.paginator.num_pages %}
+			  	  	<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant1 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant2 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant2 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant3 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant3 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant4 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant4 }}</a>
+	        		</li>
+	        	{% endif %}
+	        	{% if suivant5 <= actualites.paginator.num_pages %}
+	        		<li class="page-item">
+	          			<a class="page-link" href = "{% url 'actualites' actualites.next_page_number %}">{{ suivant5 }}</a>
+	        		</li>
+	        	{% endif %}
+		  	  	
+		  	  	
+		  	  	
+		  	  	<li class = "page-item" style="justify-content: right">
+		  	  		{% if actualites.has_next %}
+		  	  		<a class = "page-link" href = "{% url 'actualites' actualites.next_page_number %}" aria-label="Next">
+		  	  			<span aria-hidden="true">&raquo;</span>
+            			<span class="sr-only">Suivante</span>
+		  	  		</a>
+		  	  	{% endif %}
+		  	  	</li>
+          	</ul>
+		  	 
+          </div>
+          
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Search Widget -->
+          <div class="card mb-4">
+            <h5 class="card-header">Rechercher</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Chercher...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Chercher</button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Pays</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                  	{% for pays1 in country1 %}
+	                    <li>
+	                      <a href="#">{{ pays1.nom }}</a>
+	                    </li>
+	                {% endfor %}
+                  </ul>
+                </div>
+                <div class = "col-lg-6">
+                	<ul class ="list-unstyled mb-0">
+	                    	{% for pays2 in country2 %}
+		                    	<li>
+		                    		<a href = "#">{{ pays2.nom }}</a>
+		                    	</li>
+		                    {% endfor %}
+	                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+      	
+      	</div>
+      </div>
+{% endblock mainpage %}

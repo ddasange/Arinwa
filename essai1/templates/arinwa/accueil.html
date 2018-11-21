@@ -1,0 +1,413 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>{% trans "Page accueil" %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+    <style>
+		.dropdown-submenu 
+		{
+    		position: relative;
+		}
+
+		.dropdown-submenu .dropdown-menu 
+		{
+		    top: 0;
+		    left: 100%;
+		    margin-top: -1px;
+		}
+	</style>
+	
+  </head>
+
+  <body onload="setupZoom()">
+  <header>
+	
+  </header>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg bg fixed-top">
+		
+      <div class="container-fluid">
+		<div class="pull-left">
+			<a class="logo" href="/arinwa/accueil/"><img src="{% static 'Logo/logo_arinsa.png' %}" class="img-fluid" alt="Logo Arinsa"/></a>
+		</div>
+        <button style="background-color: black" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+              <a class="nav-link" href="/arinwa/accueil/">{% trans "Accueil" %}</a>
+            </li>
+            
+
+            <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle"  data-toggle="dropdown">{% trans 'Pays' %}
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					{%for country in pays %}
+	  					<li class="dropdown-submenu">
+	   						<a class="test" tabindex="-1" href="#">{% trans country.nom %}<span class="caret"></span></a>
+	    					<ul class="dropdown-menu dropdown-menu-right">
+		          				<li><a tabindex="-1" href="{% url 'lois' country.id %}">Information du pays</a></li>
+		          				<li><a tabindex="-1" href="{% url 'lois' country.id %}">Documentation</a></li>
+		          				<li><a tabindex="-1" href="{% url 'lois' country.id %}">Legislation</a></li>
+			        		</ul>
+			      		</li>
+			      	{%endfor%}
+		    	</ul>
+			</li>
+
+
+			<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% trans "Reseau" %}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              	{% for lien in liens %}
+                	<a class="dropdown-item" href="{{lien.lien}}">{{lien.nom}}</a>
+                {% endfor %}
+                
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/arinwa/video/">{% trans "Support vidéo" %}</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="/arinwa/about/">{% trans "A propos" %}</a>
+            </li>
+			<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% trans "Connexion" %}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="/arinwa/register/">{% trans "Créer un compte" %}</a>
+                <a class="dropdown-item" href="/arinwa/login/">{% trans "Connectez-vous" %}</a>
+                
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% trans 'Langue' %}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="/arinwa/langue/fr">{% trans 'Français' %}</a>
+                <a class="dropdown-item" href="/arinwa/langue/en">{% trans 'Anglais' %}</a>
+                <a class="dropdown-item" href="/arinwa/langue/pt">{% trans 'Portugais' %}</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    <header style = "margin-top:40px">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox" >
+        	
+	         		<div class="carousel-item active" >
+	         			<img class="d-block w-100" alt="{{ first_slider.image.name }}" src="{{ first_slider.image.url }}">
+			            <!-- <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.8); color: black; ">
+			              <h3>{% blocktrans with first=first_slider.titre %} {{ first }} {% endblocktrans %}</h3>
+			              <p>{% blocktrans with first_d=first_slider.description %} {{ first_d }} {% endblocktrans %}</p>
+			            </div> -->
+	          		</div>
+	          	{% for slider in slider_list %}
+	          		<div class="carousel-item">
+	          			<img class="d-block w-100" src="{{ slider.image.url }}" alt="{{ slider.image.name }}">
+			            <!-- <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, 0.8); color: black; ">
+			              <h3>{% blocktrans with slider_t=slider.titre %} {{ slider_t }} {% endblocktrans %}</h3>
+			              <p>{% blocktrans with slider_d=slider.description %} {{ slider_d }} {% endblocktrans %}</p>
+			            </div> -->
+	          		</div>	
+          	{% empty %}
+          		<div class="carousel-item active" style="background-image: url('http://placehold.it/700x400')">
+	            <div class="carousel-caption d-none d-md-block">
+	              <h3>{% trans 'Nom de la photo1' %}</h3>
+	              <p>{% trans 'Description de la photo' %}</p>
+	            </div>
+	          </div>
+	          <!-- Slide Two - Set the background image for this slide in the line below -->
+	          <div class="carousel-item" style="background-image: url('http://placehold.it/700x400')">
+	            <div class="carousel-caption d-none d-md-block">
+	              <h3>{% trans 'Nom de la photo2' %}</h3>
+	              <p>{% trans 'Description de la photo.' %}</p>
+	            </div>
+	          </div>
+	          <!-- Slide Three - Set the background image for this slide in the line below -->
+	          <div class="carousel-item" style="background-image: url('http://placehold.it/700x400')">
+	            <div class="carousel-caption d-none d-md-block">
+	              <h3>{% trans 'Nom de la photo2' %}</h3>
+	              <p>{% trans 'Description de la photo.' %}</p>
+	            </div>
+	          </div>
+          {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">{% trans "Précédent"  %}</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">{% trans "Suivant" %}</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container contentpage">
+		<div class="row">
+			<div class="col-lg-3 mb-4" id="monTab">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a href="#evenement" class="nav-link monBouton active" id="evenement-tab" data-toggle="tab" role="tab" aria-contols="evenement" aria-selected="true">{% trans 'Evénéments' %}</a>
+					</li>
+					<li class="nav-item">
+						<a href="#actualite" class="nav-link monBouton" id="actualite-tab" data-toggle="tab" role="tab" aria-controls="actualite" aria-selected="false">{% trans 'Actualités' %}</a>
+					</li>
+				</ul>
+
+			<div class="tab-content " id="myTabContent">
+				<div class="tab-pane fade show active" id="evenement" role="tabpanel" aria-labelledby="evenement-tab">
+					
+				<h4 style="text-align:center"><b >{% trans "Evénements à venir" %}</b></h4>
+				
+				{% for evenement in evenements %}
+					<hr>
+					{% blocktrans with evenement_d=evenement.date_debut evenement_f=evenement.date_fin %}
+					 Du {{ evenement_d }} au {{ evenement_f }} {% endblocktrans %}
+					<a class="wrapper" href="#">
+						
+						<p>
+							{% blocktrans with evenement_d=evenement.description|truncatewords:20  %}
+								{{ evenement_d }}
+							{% endblocktrans %}
+						</p>
+					</a>
+				{% empty %}
+					<p>{% trans "Aucun événement pour le moment, merci !" %} </p>
+				{% endfor %}
+				
+			
+				</div>
+				<div class="tab-pane fade" id="actualite" role="tabpanel" aria-labelledby="actualite-tab">
+				
+					<div>
+						<h4 style="text-align:center"><b >{% trans "Nouvelles actualités" %}</b></h4>
+						{% for actualite in actualites %}
+						<hr>
+					{% blocktrans with actualite_d=actualite.date  %}
+					 Publié le  {{ actualite_d }} {% endblocktrans %}
+					<a class="wrapper" href="{% url 'actualite' actualite.id %}">
+						
+						<p>
+							{% blocktrans with actualite_d=actualite.contenu|truncatewords:20  %}
+								{{ actualite_d }}
+							{% endblocktrans %}
+						</p>
+					</a>
+				{% empty %}
+					<p>{% trans "Aucune actualités pour le moment, merci !" %} </p>
+				{% endfor %}
+					<a class="btn btn-primary" href="{% url 'actualites' %}" role="button">Voir plus d'actualités</a>
+					</div>
+				</div>
+			</div>
+			</div>
+		
+		<div class = "col-lg-9 mb-4" id="arinwa">
+				<!-- {% blocktrans with contenu=objectif_arinwa.contenu|linebreaks %}
+					{{ contenu }}
+				{% endblocktrans %} -->
+
+				{{objectif_arinwa.contenu}}
+			
+			<hr>
+		  <!-- /.row -->
+		  <h2 style="margin: 20px auto;">{% trans "Actualités" %}</h2>
+		  <hr>
+		  <div class = "card-group">
+		  	{% for actualite in actualites %}
+				<div class="card">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="card-img-top" style="max-height: 300px " src="{{actualite.image.url}}" alt="">
+						</div>
+						<div class="col-md-6">
+							<div class="card-body">
+								<h4 class="card-title">{% blocktrans with actualite_t=actualite.titre %} {{ actualite_t }} {% endblocktrans %}</h4>
+								<p class="card-text">
+									{% blocktrans with actualite_d=actualite.date actualite_c=actualite.contenu|truncatewords:20 %}
+										<p class="small"> Publié le {{ actualite_d }} </p>
+										{{ actualite_c }}
+									{% endblocktrans %}
+								</p>
+							</div>
+							<div >
+								<a href="{% url 'actualite' actualite.id %}" class="btn btn-primary btn-xs" role="button">{% trans "lire la suite" %}
+									&rarr;
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% empty %}
+				<p>{% trans "Aucune actualité pour le moment, merci !" %} </p>
+			{% endfor %}
+		  </div>
+		  <hr>
+		  <h2 class="my-4">{% trans "Les documents" %}</h2>
+		  
+		  <div class="row">
+		  	{% for document in documents %}
+				<div class="col-lg-4 mb-4">
+				  <div class="card h-100">
+					
+					<h6 class="card-header small">{% blocktrans with document_d=document.date %} 
+						publié le,  {{ document_d }} 
+					
+					{% endblocktrans %}</h6>
+					<div class="card-body">
+					  <p class="card-text">
+					  	{% blocktrans with document_t=document.titre %}
+					  		{{ document_t }}
+					  	{% endblocktrans %}
+					  	</p>
+					</div>
+					<div class="card-footer">
+					  <a href="{% url 'downloads' document.id %}" class="btn btn-primary">{% trans "Télécharger le document" %}</a>
+					</div>
+				  </div>
+				</div>
+			{% empty %}
+				<p>{% trans "Aucun document à présenter pour le moment, merci !" %} </p>
+				
+			{% endfor %}
+		  </div>
+		  
+		  
+		  
+		</div>
+		</div>
+		
+    </div>
+   <!--  <div class="container-fluid" style="background-color: white">
+    	<div class="row">
+			<div class="col-lg-12">
+				<h1 style="text-align:center; margin: 20px auto">{% trans "Pays membres" %}</h1>
+				<div class="container-fluid" id = "moncontainer">
+					
+				<center>
+					<div class="row ">
+					 	<div class="col-md-2">
+							Côte d'ivoire
+						</div>
+						<div class="col-md-2">
+							Ghana
+						</div>
+						<div class="col-md-2">
+							Liberia
+						</div>
+						<div class="col-md-2">
+							Guinee Bisau
+						</div>
+
+						<div class="col-md-2">
+							Niger
+						</div>
+						<div class="col-md-2">
+							Burkina Faso
+						</div>
+						<div class="col-md-2">
+							Togo
+						</div>
+						<div class="col-md-2">
+							Nigeria
+						</div>
+
+						<div class="col-md-2">
+							Sierra Leone
+						</div>
+						<div class="col-md-2">
+							Senegal
+						</div>
+						<div class="col-md-2">
+							Mali
+						</div>
+						<div class="col-md-2">
+							Benin
+						</div>
+					</div>
+
+					<div class="row ">
+						<div class="col-md-2">
+							
+						</div>
+						<div class="col-md-2">
+							Cape_Verde
+						</div>
+						<div class="col-md-2">
+							Gambia
+						</div>
+						<div class="col-md-2">
+							Guinea
+						</div>
+						<div class="col-md-2">
+							Mauritania
+						</div>
+					</div>
+				</center>
+				</div>
+			</div>
+		</div>
+    </div> -->
+    <!-- /.container -->
+	
+    <!-- Footer -->
+   {%include 'arinwa/_footer.html'%}
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script>
+		$(document).ready(function()
+		{
+	  		$('.dropdown-submenu a.test').on("click", function(e)
+	  		{
+		    	$(this).next('ul').toggle();
+		    	e.stopPropagation();
+		    	// e.preventDefault();
+  			});
+		});
+	</script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js-global/FancyZoom.js' %}"></script>
+    <script src="{% static 'js-global/FancyZoomHTML.js' %}"></script>
+
+  </body>
+
+</html>

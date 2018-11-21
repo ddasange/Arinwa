@@ -1,0 +1,76 @@
+{% include 'new/_header.html'%}
+{% load static %}
+    <!--
+    ++++++++++++++++++++++++++
+    // Home Slider Starts
+    ++++++++++++++++++++++++++
+    -->
+    <section class="home-slider" id="top" data-2x="{% static 'new/images/header2x.jpg' %}">
+        <div class="container">
+            <div class="home-slider-caption">
+                <h1 class="wow bounceInLeft">Le Réseau inter-agences de
+            <br>recouvrement des avoirs pour</h1>
+                <h1>l'Afrique de l’ouest</h1>
+                <a href="#" class="btn btn-outline btn-primary btn-icon active btn-lg btn-rounded wow bounceInUp" data-wow-delay="0.5s">Se connecter<span class="fa fa-angle-right icon-with-btn"></span></a>
+                <a href="#" class="btn btn-outline btn-white btn-icon btn-lg btn-rounded wow bounceInUp" data-wow-delay="0.7s">S'inscrire<span class="fa fa-angle-right icon-with-btn"></span></a>
+            </div>
+        </div>
+    </section>
+    <section class="about jumbotron">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <h2 style="text-align: center">IDENTIFIER</h2>
+                <P style="text-align: center;"><strong>ARINWA</strong> s’efforce d’identifier les produits du crime où qu’ils se trouvent dans le monde. Les criminels tentent de cacher leurs biens en les faisant passer au-delà des frontières. En travaillant ensemble, les organismes chargés de l'application de la loi identifient ces actifs.</P>
+            </div>
+            <div class="col-md-4">
+                <h2 style="text-align: center">GARANTIR</h2>
+        <p style="text-align: center;">Une fois les avoirs criminels identifiés, les points de contact <strong>ARINWA</strong> prendront les mesures nécessaires pour s'assurer que les avoirs sont préservés et sécurisés. Les points de contact <strong>ARINWA</strong> peuvent obtenir une ordonnance de blocage, prendre possession du bien ou utiliser un autre type de courant disponible.</p>
+            </div>
+            <div class="col-md-4">
+                <h2 style="text-align: center">CONFISQUER</h2>
+        <p style="text-align: center;">La dernière étape consiste à confisquer les avoirs criminels à la suite d’une décision finale du tribunal. L'actif ou le produit net de la vente de l'actif sera ensuite transféré à l'État ou à un organisme désigné.</P>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-heading">Actualités</h2>
+                    <h3 class="section-sub-heading">Les actualités concernant arinwa</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="services">
+                    {% for actualite in actualites %}
+                     {% if forloop.counter <= 4%}
+                    <div class="service col-md-3 col-sm-6 col-xs-12 wow bounceInLeft" data-wow-delay="0.2s">
+                       <div class="row">
+                           <div class="col-md-12 image-fluid">
+                               {{actualite.contenu | truncatewords:10}}
+                           </div>
+                           <div class="col-md-12">
+                               <p class="pull-right">{{actualite.date}}</p>
+                           </div>
+                       </div>
+                        <a href="#" class="btn btn-outline btn-primary btn-medium btn-rounded wow bounceInUp" data-wow-delay="0.1s">voir plus</a>
+                    </div>
+                    {%else%}
+
+                    {%endif%}
+                    {%endfor%}
+                    <div class="row">
+                        <div class="col-md-offset-5 col-md-4">
+                            <button class="btn btn-primary" style="margin-top: 20px">Toutes les actualités</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    
+
+    -->
+    {% include 'new/_footer.html'%}

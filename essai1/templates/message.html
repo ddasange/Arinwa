@@ -1,0 +1,78 @@
+{% load i18n %}
+{%load static%}
+
+{% include '_header.html'%}
+
+<section>
+
+  
+
+  <div class="mainpanel">
+    {% include '_sidebar_left.html'%}
+
+    <!--<div class="pageheader">
+      <h2><i class="fa fa-home"></i> Dashboard</h2>
+    </div>-->
+
+    <div class="contentpanel">
+
+      <div class="row">
+
+        <div class="col-md-offset-3 col-md-8 jumbotron">
+        <div class="row">
+          {%for message in conversations%}
+            {%if message.expediteur_id == membre.id%}
+              <div class="col-md-offset-6 col-md-6 well" style="background-color: rgba(0, 0, 255, 0.3); color: white">
+                {{message.texte}}
+              </div>
+            {%else%}
+               <div class=" col-md-6 well">
+                {{message.texte}}
+              </div>
+            {%endif%}
+          {%endfor%}
+        </div>
+
+        <div class="row" style="margin-top:45px">
+         <div class="col-md-offset-2 col-md-4">
+           <form method="POST">
+             <div class="col-md-8">
+                <textarea name="message" class="form-control" rows="2"></textarea>
+             </div>
+             <div class="col-md-4">
+                <button class='btn btn-primary' type="submit">Envoyer</button>
+             </div>
+           </form>
+         </div>
+
+          
+        
+        </div><!-- row -->
+        
+      </div><!-- row -->
+
+    </div><!-- contentpanel -->
+
+  </div><!-- mainpanel -->
+
+</section>
+
+<script src="{% static 'espaceMembre/lib/jquery/jquery.js' %}"></script>
+<script src="{% static 'espaceMembre/lib/jquery-ui/jquery-ui.js' %}"></script>
+<script src="{% static 'espaceMembre/lib/bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static 'espaceMembre/lib/jquery-toggles/toggles.js' %}"></script>
+
+<script src="{% static 'espaceMembre/lib/morrisjs/morris.js' %}"></script>
+<script src="{% static 'espaceMembre/lib/raphael/raphael.js' %}"></script>
+
+<script src="{% static 'espaceMembre/lib/flot/jquery.flot.js' %}"></script>
+<script src="{% static 'espaceMembre/lib/flot/jquery.flot.resize.js' %}"></script>
+<script src="{% static 'espaceMembre/lib/flot-spline/jquery.flot.spline.js' %}"></script>
+
+<script src="{% static 'espaceMembre/lib/jquery-knob/jquery.knob.js' %}"></script>
+
+<script src="{% static 'espaceMembre/js/quirk.js' %}"></script>
+<script src="{% static 'espaceMembre/js/dashboard.js ' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %} Documents de la jurisprudence {% endblock title %}
+
+{% block mainpage %}
+	<ol class="breadcrumb" id="breadcrumbList">
+        <li class="breadcrumb-item">
+          <a href="/arinwa/accueil/">Accueil</a>
+        </li>
+        <li class="breadcrumb-item">Documents</li>
+        <li class="breadcrumb-item active">Jurisprudence</li>
+      </ol>
+      
+      <div class="container">
+      	<div class="row">
+      		<div class="col-lg-3 mb-4">
+      		<nav class="nav flex-column">
+      			<li class="nav-item">
+      				<a class="nav-link" href="#">Récommandations</a>
+      			</li>
+      			<li class="nav-item">
+      				<a class="nav-link" href="#">Jurisprudence</a>
+      			</li>
+      			<li class="nav-item">
+      				<a class="nav-link" href="#">Législations modernes</a>
+      			</li>
+      		</nav>
+      	</div>
+      	<div class="col-lg-9 mb-8">
+      		<h4>Documents de la jurisprudence d'ARINWA</h4><br>
+      		<div id="recherche">
+      			<form>
+      				<div class="form">
+      					<div class="form-group ">
+      						<label for="pays" class="col-lg-2 mb-1">Pays</label>
+	      					<select id="pays" class="form-contol col-lg-7 mb-5">
+	      						<option>Côte d'Ivoire</option>
+	      						<option>Ghana</option>
+	      						<option>Liberia</option>
+	      						<option>Nigeria</option>
+	      					</select>
+      					</div>
+      					<button type="submit" class="btn btn-search">Recheche</button>
+      				</div>
+      			</form>
+      		</div>
+      		<div>
+      			<table class= "table table-hover">
+      				<thead>
+      					<tr>
+      						<th scope="col">Catégorie</th>
+      						<th scope="col">Description</th>
+      						<th scope="col">Date de publication</th>
+      					</tr>
+      				</thead>
+      				<tbody>
+      					{% for jurisprudence in jurisprudences %}
+      						<tr>
+      						<td>{{ jurisprudence.pays }}</td>
+	      					<td><a href="#">{{ jurisprudence.titre }}</a></td>
+	      					<td>{{ jurisprudence.date }}</td>
+      					</tr>
+      					{% endfor %}
+      					
+      				</tbody>
+      			</table>
+      		</div>
+      	</div>
+      	</div>
+      </div>
+{% endblock mainpage %}

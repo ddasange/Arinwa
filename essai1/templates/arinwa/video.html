@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %} Nos vidéos {% endblock title %}
+
+
+{% block document %}
+	{% for categorie in categories %}
+         <a class="dropdown-item" href="{% url 'documents' categorie.id %}">{{ categorie.nom }}</a>
+    {% endfor %}
+{% endblock document %}
+
+{% block pays %}
+	{% for country in pays %}
+		<a class="dropdown-item" href="{% url 'lois' country.id %}">{{ country.nom }}</a>
+	{% endfor %}
+{% endblock pays %}
+
+{% block mainpage %}
+	<!-- Page Heading/Breadcrumbs -->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">accueil</a>
+        </li>
+        <li class="breadcrumb-item active">support vidéo</li>
+      </ol>
+
+      <div class="row">
+		<div class="col-lg-6 ">
+          <h4>My video</h4>
+			<div class="timeline" >
+				<!-- timeline item -->
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
+
+                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+
+                <div class="timeline-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
+                            frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="timeline-footer">
+                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                </div>
+              </div>
+            </li>
+            <!-- END timeline item -->
+			</div>
+        </div>
+            
+        
+        <div class="col-lg-6 ">
+          <h4>My video</h4>
+			<div class="timeline" >
+				<!-- timeline item -->
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
+
+                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+
+                <div class="timeline-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
+                            frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="timeline-footer">
+                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                </div>
+              </div>
+            </li>
+            <!-- END timeline item -->
+			</div>
+        </div>
+        <div class="col-lg-6 ">
+          <h4>My video</h4>
+			<div class="timeline" >
+				<!-- timeline item -->
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
+
+                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+
+                <div class="timeline-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
+                            frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="timeline-footer">
+                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                </div>
+              </div>
+            </li>
+            <!-- END timeline item -->
+			</div>
+        </div>
+        <div class="col-lg-6">
+          <h4>My video</h4>
+			<div class="timeline" >
+				<!-- timeline item -->
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
+
+                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+
+                <div class="timeline-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
+                            frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="timeline-footer">
+                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                </div>
+              </div>
+            </li>
+            <!-- END timeline item -->
+			</div>
+        </div>
+        <div class="col-lg-6 ">
+          <h4>My video</h4>
+			<div class="timeline" >
+				<!-- timeline item -->
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
+
+                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+
+                <div class="timeline-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
+                            frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="timeline-footer">
+                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                </div>
+              </div>
+            </li>
+            <!-- END timeline item -->
+			</div>
+        </div>
+        <div class="col-lg-6 ">
+          <h4>My video</h4>
+			<div class="timeline" >
+				<!-- timeline item -->
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
+
+                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
+
+                <div class="timeline-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
+                            frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="timeline-footer">
+                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
+                </div>
+              </div>
+            </li>
+            <!-- END timeline item -->
+			</div>
+          </div>
+        </div>
+     
+      <!-- /.row -->
+
+      <!-- Pagination -->
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+{% endblock mainpage %}

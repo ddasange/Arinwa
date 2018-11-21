@@ -1,0 +1,118 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novelty Landing Page</title>
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="{% static 'new/stylesheets/framework.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'new/stylesheets/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'new/stylesheets/animate.min.css' %}" type="text/css">
+
+    <!-- Icon Fonts  -->
+    <link rel="stylesheet" href="{% static 'new/stylesheets/font-awesome.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'new/stylesheets/StrokeGap.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'new/stylesheets/lightGallery.css' %}" type="text/css">
+
+    <!-- Customize Color Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'new/stylesheets/colors/default.css' %}" id="colors">
+
+    <!-- Color Switcher only for Demo Purposes -->
+    <link rel="stylesheet" href="{% static 'new/stylesheets/switcher.css' %}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        .dropdown-submenu 
+        {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu 
+        {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    ++++++++++++++++++++++++++
+    // Preloader Starts
+    ++++++++++++++++++++++++++
+    -->
+    <div class="preloading">
+        <img class="loading-gif" src="{% static 'new/images/loading.svg' %}" alt="preloader">
+    </div>
+    <!--
+    ++++++++++++++++++++++++++
+    // Menu Bar Starts
+    ++++++++++++++++++++++++++
+    -->
+    <header data-scroll-header class="navbar navbar-default navbar-fixed-top " role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/arinwa/accueil/">
+                    <img class="" style="max-width: 150px; max-height: 50px" src="{% static 'new/Logo/logo_arinsa.png' %}" height="60" alt="logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse main-navigation">
+                <ul class="nav navbar-nav">
+                    <li><a  href="/arinwa/accueil/">Accueil</a>
+                    </li>
+                    <li><a  href="/arinwa/actualites/">Actualité</a>
+                    </li>
+                    <li><a  href="/arinwa/about/">Qui sommes nous?</a>
+                    </li>
+                    <li><a  href="/arinwa/event/">Evènemment</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  data-toggle="dropdown">{% trans 'Pays membres' %}
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        {%for country in pays %}
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#">{% trans country.nom %}<span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a tabindex="-1" href="{% url 'lois' country.id %}">Information</a></li>
+                                    <li><a tabindex="-1" href="{% url 'lois' country.id %}">Documentation</a></li>
+                                    <li><a tabindex="-1" href="{% url 'lois' country.id %}">Legislation</a></li>
+                                </ul>
+                            </li>
+                        {%endfor%}
+                        </ul>
+                    </li>
+                    <li><a  href="#gallery">Ressources</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% trans "Liens utiles" %}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                        {% for lien in liens %}
+                            <a class="dropdown-item" target="_blank" href="{{lien.lien}}">{{lien.nom}}</a><br>
+                        {% endfor %}
+                
+                        </div>
+                    </li>
+                    <li><a  href="#contact">Multimedia</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>

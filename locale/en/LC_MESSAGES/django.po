@@ -1,0 +1,653 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-19 17:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\essai1\models.py:11
+msgid "publier"
+msgstr ""
+
+#: .\essai1\models.py:17
+msgid "Accepter la demande"
+msgstr "Langue"
+
+#: .\essai1\models.py:22
+msgid "date de début"
+msgstr ""
+
+#: .\essai1\models.py:23
+msgid "date de fin"
+msgstr ""
+
+#: .\essai1\models.py:34
+msgid "Evénément"
+msgstr ""
+
+#: .\essai1\models.py:37 .\essai1\models.py:46
+msgid "nom"
+msgstr ""
+
+#: .\essai1\models.py:52 .\essai1\models.py:67 .\essai1\models.py:76
+#: .\essai1\models.py:156
+msgid "titre"
+msgstr ""
+
+#: .\essai1\models.py:55 .\essai1\models.py:69 .\essai1\models.py:79
+#: .\essai1\models.py:108
+msgid "date d'ajout"
+msgstr ""
+
+#: .\essai1\models.py:56
+msgid "catégorie"
+msgstr ""
+
+#: .\essai1\models.py:87
+msgid "actualité"
+msgstr ""
+
+#: .\essai1\models.py:106
+msgid "lien de la vidéo"
+msgstr ""
+
+#: .\essai1\models.py:107
+msgid "commentaire"
+msgstr ""
+
+#: .\essai1\models.py:114
+msgid "vidéo"
+msgstr ""
+
+#: .\essai1\models.py:119 .\essai1\models.py:143
+msgid "contenu"
+msgstr ""
+
+#: .\essai1\models.py:120
+msgid "Quel est le but de Arinwa?"
+msgstr ""
+
+#: .\essai1\models.py:121
+msgid "Combien de juridictions sont membres?"
+msgstr ""
+
+#: .\essai1\models.py:122
+msgid "Qui peut utiliser ARINWA?"
+msgstr ""
+
+#: .\essai1\models.py:129
+msgid " A propos de nous"
+msgstr ""
+
+#: .\essai1\models.py:130 .\essai1\templates\arinwa\about.html:6
+#: .\essai1\templates\arinwa\about.html:36
+msgid "A propos de nous"
+msgstr "ABOUT US"
+
+#: .\essai1\models.py:151 .\essai1\models.py:152
+msgid "concernant arinwa"
+msgstr ""
+
+#: .\essai1\models.py:166
+msgid "image et description"
+msgstr ""
+
+#: .\essai1\templates\_header.html:46
+#, fuzzy
+#| msgid "Recheche"
+msgid "Rechercher..."
+msgstr "Search..."
+
+#: .\essai1\templates\_header.html:71
+msgid "Mon profil"
+msgstr "My profil"
+
+#: .\essai1\templates\_header.html:72
+#, fuzzy
+#| msgid "Pays membres"
+msgid "Parametres"
+msgstr "MEMBER COUNTRY"
+
+#: .\essai1\templates\_header.html:73 .\essai1\templates\_sidebar_left.html:56
+#, fuzzy
+#| msgid "Connexion"
+msgid "Deconnexion"
+msgstr "Log out"
+
+#: .\essai1\templates\_sidebar_left.html:52
+msgid "Menu principal"
+msgstr "MENU"
+
+#: .\essai1\templates\_sidebar_left.html:53
+msgid "Message"
+msgstr "MESSAGE"
+
+#: .\essai1\templates\_sidebar_left.html:54
+msgid "Amis"
+msgstr "FRIENDS"
+
+#: .\essai1\templates\_sidebar_left.html:55
+#, fuzzy
+#| msgid "Pays membres"
+msgid "Paramètre"
+msgstr "MEMBER COUNTRY"
+
+#: .\essai1\templates\_sidebar_left.html:65
+msgid "ACCUEIL"
+msgstr "HOME"
+
+#: .\essai1\templates\_sidebar_left.html:66
+msgid "Messages"
+msgstr "MESSAGE"
+
+#: .\essai1\templates\_sidebar_left.html:67
+#, fuzzy
+#| msgid "Membre"
+msgid "Membres"
+msgstr "MEMBER"
+
+#: .\essai1\templates\_sidebar_left.html:68
+msgid "AMIS"
+msgstr "FRIENDS"
+
+#: .\essai1\templates\_sidebar_left.html:69
+msgid "INVITATIONS"
+msgstr "INVITATIONS"
+
+#: .\essai1\templates\_sidebar_left.html:70
+msgid "EN LIGNE"
+msgstr "ONLINE"
+
+#: .\essai1\templates\_sidebar_left.html:72
+msgid "FORUM"
+msgstr "FORUM"
+
+#: .\essai1\templates\_sidebar_left.html:86
+msgid "Nouveau message"
+msgstr ""
+
+#: .\essai1\templates\_sidebar_left.html:110
+msgid "Mes amis"
+msgstr "My Friends"
+
+#: .\essai1\templates\arinwa\about.html:23
+#: .\essai1\templates\arinwa\accueil.html:55
+#: .\essai1\templates\arinwa\documents.html:23 .\templates\base.html:57
+msgid "Accueil"
+msgstr "HOME"
+
+#: .\essai1\templates\arinwa\about.html:25
+#: .\essai1\templates\arinwa\accueil.html:109 .\templates\base.html:106
+msgid "A propos"
+msgstr "ABOUT"
+
+#: .\essai1\templates\arinwa\about.html:56
+msgid "Notre équipe"
+msgstr "YOUR TEAM"
+
+#: .\essai1\templates\arinwa\about.html:63
+#: .\essai1\templates\arinwa\about.html:76
+#: .\essai1\templates\arinwa\about.html:89
+msgid "Membre"
+msgstr "MEMBER"
+
+#: .\essai1\templates\arinwa\about.html:64
+#: .\essai1\templates\arinwa\about.html:77
+#: .\essai1\templates\arinwa\about.html:90
+msgid "Position"
+msgstr "POSITION"
+
+#: .\essai1\templates\arinwa\accueil.html:13
+msgid "Page accueil"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:60
+#: .\essai1\templates\arinwa\documents.html:25 .\templates\base.html:62
+msgid "Documents"
+msgstr "DOCUMENTS"
+
+#: .\essai1\templates\arinwa\accueil.html:71
+#: .\essai1\templates\arinwa\documents.html:65
+msgid "Pays"
+msgstr "COUNTRY"
+
+#: .\essai1\templates\arinwa\accueil.html:90
+msgid "Reseau"
+msgstr "LINK"
+
+#: .\essai1\templates\arinwa\accueil.html:103
+#: .\essai1\templates\arinwa\accueil.html:204
+#: .\essai1\templates\arinwa\accueil.html:265 .\templates\base.html:100
+msgid "Actualités"
+msgstr "ACTUALITY"
+
+#: .\essai1\templates\arinwa\accueil.html:106 .\templates\base.html:103
+msgid "Support vidéo"
+msgstr "VIDEO PROP"
+
+#: .\essai1\templates\arinwa\accueil.html:113 .\templates\base.html:110
+msgid "Connexion"
+msgstr "CONNECT"
+
+#: .\essai1\templates\arinwa\accueil.html:116
+#: .\essai1\templates\arinwa\register.html:40 .\templates\base.html:113
+msgid "Créer un compte"
+msgstr "CREATE A ACCOUNT"
+
+#: .\essai1\templates\arinwa\accueil.html:117
+#: .\essai1\templates\arinwa\login.html:8 .\templates\base.html:114
+msgid "Connectez-vous"
+msgstr "CONNECT YOU"
+
+#: .\essai1\templates\arinwa\accueil.html:123
+msgid "Langue"
+msgstr "LANGUAGE"
+
+#: .\essai1\templates\arinwa\accueil.html:126 .\essaiArinwa\settings.py:131
+msgid "Français"
+msgstr "FRENCH"
+
+#: .\essai1\templates\arinwa\accueil.html:127
+#: .\essai1\templates\arinwa\index.html:58
+#, fuzzy
+#| msgid "English"
+msgid "Anglais"
+msgstr "ENGLISH"
+
+#: .\essai1\templates\arinwa\accueil.html:128
+#: .\essai1\templates\arinwa\index.html:63
+#, fuzzy
+#| msgid "Portugal"
+msgid "Portugais"
+msgstr "PORTUGAIS EN ANGLAIS"
+
+#: .\essai1\templates\arinwa\accueil.html:149
+#, python-format
+msgid " %(first)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:150
+#, python-format
+msgid " %(first_d)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:157
+#, python-format
+msgid " %(slider_t)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:158
+#, python-format
+msgid " %(slider_d)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:164
+msgid "Nom de la photo1"
+msgstr "NAME OF PHOTO"
+
+#: .\essai1\templates\arinwa\accueil.html:165
+#, fuzzy
+#| msgid "Description de la photo."
+msgid "Description de la photo"
+msgstr "DESCRIPTION OF IMAGE"
+
+#: .\essai1\templates\arinwa\accueil.html:171
+#: .\essai1\templates\arinwa\accueil.html:178
+msgid "Nom de la photo2"
+msgstr "NAME OF IMAGE TWO"
+
+#: .\essai1\templates\arinwa\accueil.html:172
+#: .\essai1\templates\arinwa\accueil.html:179
+msgid "Description de la photo."
+msgstr "DESCRIPTION OF IMAGE"
+
+#: .\essai1\templates\arinwa\accueil.html:186
+#: .\essai1\templates\arinwa\documents.html:91
+msgid "Précédent"
+msgstr "PREVIOUS"
+
+#: .\essai1\templates\arinwa\accueil.html:190
+#: .\essai1\templates\arinwa\documents.html:127
+msgid "Suivant"
+msgstr "NEXT"
+
+#: .\essai1\templates\arinwa\accueil.html:201
+#, fuzzy
+#| msgid "Evénements à venir"
+msgid "Evénéments"
+msgstr "EVENT"
+
+#: .\essai1\templates\arinwa\accueil.html:211
+msgid "Evénements à venir"
+msgstr "NEXT EVENT"
+
+#: .\essai1\templates\arinwa\accueil.html:215
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t Du %(evenement_d)s au %(evenement_f)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:220
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\t%(evenement_d)s\n"
+"\t\t\t\t\t\t\t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:226
+msgid "Aucun événement pour le moment, merci !"
+msgstr "NOT ANY EVENT FOR ACTUALLITY"
+
+#: .\essai1\templates\arinwa\accueil.html:234
+msgid "Nouvelles actualités"
+msgstr "NEW ACTUALLY"
+
+#: .\essai1\templates\arinwa\accueil.html:237
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t Publié le  %(actualite_d)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:242
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\t%(actualite_d)s\n"
+"\t\t\t\t\t\t\t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:248
+msgid "Aucune actualités pour le moment, merci !"
+msgstr "NOT ANY ACTUALLY FOR ACTUALLITY"
+
+#: .\essai1\templates\arinwa\accueil.html:257
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t%(contenu)s\n"
+"\t\t\t\t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:276
+#: .\essai1\templates\arinwa\actualites.html:42
+#, python-format
+msgid " %(actualite_t)s "
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:278
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\t\t\t<p class=\"small\"> Publié le %(actualite_d)s </p>\n"
+"\t\t\t\t\t\t\t\t\t\t%(actualite_c)s\n"
+"\t\t\t\t\t\t\t\t\t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:285
+msgid "lire la suite"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:293
+#: .\essai1\templates\arinwa\actualites.html:58
+msgid "Aucune actualité pour le moment, merci !"
+msgstr "NOT ANY ACTUALITY FOR ACTUALLITY"
+
+#: .\essai1\templates\arinwa\accueil.html:297
+msgid "Les documents"
+msgstr "LES DOCUMENTS"
+
+#: .\essai1\templates\arinwa\accueil.html:304
+#, python-format
+msgid ""
+" \n"
+"\t\t\t\t\t\tpublié le,  %(document_d)s \n"
+"\t\t\t\t\t\n"
+"\t\t\t\t\t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:310
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t  \t\t%(document_t)s\n"
+"\t\t\t\t\t  \t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\accueil.html:316
+msgid "Télécharger le document"
+msgstr "DOWNLOAD THE DOCUMENT"
+
+#: .\essai1\templates\arinwa\accueil.html:321
+msgid "Aucun document à présenter pour le moment, merci !"
+msgstr "AUCUNE DOCUMENT A PRESENTER POUR LE MOMENT, MERCI"
+
+#: .\essai1\templates\arinwa\accueil.html:335
+msgid "Pays membres"
+msgstr "MEMBER COUNTRY"
+
+#: .\essai1\templates\arinwa\actualites.html:44
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\t\t\t\n"
+"\t\t\t\t\t\t%(actualite_c)s\n"
+"\t\t\t\t\t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\actualites.html:52
+#, python-format
+msgid ""
+"\n"
+"\t              \t\tPublié le, %(actualite_d)s\n"
+"\t              \t"
+msgstr ""
+
+#: .\essai1\templates\arinwa\documents.html:51
+msgid "Côte d'Ivoire"
+msgstr "IVORY COST"
+
+#: .\essai1\templates\arinwa\documents.html:52
+msgid "Ghana"
+msgstr "GHANA"
+
+#: .\essai1\templates\arinwa\documents.html:53
+msgid "Liberia"
+msgstr "LIBERIA"
+
+#: .\essai1\templates\arinwa\documents.html:54
+#, fuzzy
+#| msgid "Niger"
+msgid "Nigeria"
+msgstr "NIGER"
+
+#: .\essai1\templates\arinwa\documents.html:57
+msgid "Recheche"
+msgstr "SEARCH"
+
+#: .\essai1\templates\arinwa\documents.html:66
+#, fuzzy
+#| msgid "Description de la photo."
+msgid "Description"
+msgstr "DESCRIPTION OF IMAGE"
+
+#: .\essai1\templates\arinwa\documents.html:67
+msgid "Date de publication"
+msgstr "PUBLICATION DATE"
+
+#: .\essai1\templates\arinwa\index.html:53
+#, fuzzy
+#| msgid "Français"
+msgid "Francais"
+msgstr "FRENCH"
+
+#: .\essai1\templates\arinwa\login.html:41
+#, fuzzy
+#| msgid "Connectez-vous"
+msgid "Connectez-vous !"
+msgstr "CONNECT YOU"
+
+#: .\essai1\templates\arinwa\login.html:46
+msgid "Nom dutilisateur"
+msgstr "Username"
+
+#: .\essai1\templates\arinwa\login.html:50
+#: .\essai1\templates\arinwa\register.html:64
+msgid "Mot de passe"
+msgstr "Password"
+
+#: .\essai1\templates\arinwa\login.html:57
+msgid "Se souvenir de moi"
+msgstr "Se souvenir de moi en english"
+
+#: .\essai1\templates\arinwa\login.html:63
+#, fuzzy
+#| msgid "Connectez-vous"
+msgid "Connecter"
+msgstr "CONNECT YOU"
+
+#: .\essai1\templates\arinwa\login.html:70
+#, fuzzy
+#| msgid "Mot de passe"
+msgid "Mot de passe oublié"
+msgstr "Password"
+
+#: .\essai1\templates\arinwa\login.html:71
+#, fuzzy
+#| msgid "Créer un compte"
+msgid "Creez un nouveau compte"
+msgstr "CREATE A ACCOUNT"
+
+#: .\essai1\templates\arinwa\register.html:9
+msgid "Page de création de compte"
+msgstr "PAGE OF CREATION ACCOUNT"
+
+#: .\essai1\templates\arinwa\register.html:46
+msgid "Nom"
+msgstr "first name"
+
+#: .\essai1\templates\arinwa\register.html:52
+msgid "Prenoms"
+msgstr "last name"
+
+#: .\essai1\templates\arinwa\register.html:58
+msgid "Email"
+msgstr "Email"
+
+#: .\essai1\templates\arinwa\register.html:70
+msgid "Confirmer le mot de passe"
+msgstr "Password confirme"
+
+#: .\essai1\templates\arinwa\register.html:79
+msgid "J'accepte les"
+msgstr "I gree"
+
+#: .\essai1\templates\arinwa\register.html:79
+msgid "conditions d'utilisation"
+msgstr "the conditions"
+
+#: .\essai1\templates\arinwa\register.html:85
+msgid "Validez"
+msgstr "Submit"
+
+#: .\essai1\templates\arinwa\register.html:90
+#, fuzzy
+#| msgid "Créer un compte"
+msgid "J'ai déjà un compte"
+msgstr "CREATE A ACCOUNT"
+
+#: .\essai1\templates\index.html:57
+#, fuzzy
+#| msgid "Précédent"
+msgid "President"
+msgstr "PREVIOUS"
+
+#: .\essai1\templates\index.html:84
+msgid "Secretaire"
+msgstr "Secretaie"
+
+#: .\essai1\templates\index.html:114
+#, fuzzy
+#| msgid "Evénements à venir"
+msgid "Evenement"
+msgstr "EVENT"
+
+#: .\essai1\templates\index.html:121
+msgid "Espace president"
+msgstr "President space"
+
+#: .\essai1\templates\index.html:131
+msgid "Espace secretaire"
+msgstr "Secretaire space"
+
+#: .\essaiArinwa\settings.py:132
+msgid "English"
+msgstr "ENGLISH"
+
+#: .\essaiArinwa\settings.py:133
+msgid "Portugal"
+msgstr "PORTUGAIS EN ANGLAIS"
+
+#: .\templates\base.html:14
+msgid "ARINWA"
+msgstr ""
+
+#: .\templates\base.html:89
+#, fuzzy
+#| msgid "Lois"
+msgid "Liens"
+msgstr "LAW"
+
+#~ msgid "Récommandations"
+#~ msgstr "RECOMMANDATIONS"
+
+#~ msgid "Jurisprudence"
+#~ msgstr "JURISPRUDENCES"
+
+#~ msgid "Législations modèles"
+#~ msgstr "LEGISLATIONS MODELES"
+
+#~ msgid "En savoir plus"
+#~ msgstr "EN SAVOIR PLUS"
+
+#~ msgid "Modern Business - Start Bootstrap Template"
+#~ msgstr "ACCEUIL"
+
+#~ msgid "Nigéria"
+#~ msgstr "NIGERIA"
+
+#~ msgid "Togo"
+#~ msgstr "TOGO"
+
+#~ msgid "Niger"
+#~ msgstr "NIGER"
+
+#~ msgid "Guinée Bissau"
+#~ msgstr "BISSAU GUINEE "
+
+#~ msgid "Burkina Faso"
+#~ msgstr "BURKINA FASO"
+
+#, fuzzy
+#~| msgid "Nom"
+#~ msgid "Nom d\\"
+#~ msgstr "first name"
+
+#, fuzzy
+#~| msgid "Côte d'Ivoire"
+#~ msgid "Côte d"
+#~ msgstr "IVORY COST"

@@ -1,0 +1,208 @@
+{% load static %}
+<footer id="site-footer" style="margin-top: 20px">
+        <section>
+            <div class="container">
+                <div class="section-content row">
+                    <div class="col-md-3 col-sm-6">
+                        <aside class="widget wow bounceInUp">
+                            <div class="widget-header">
+                                <h4>About</h4>
+                            </div>
+                            <p>Lorem ipsum Pariatur ut aute mollit commodo sint excepteur nulla duis qui officia ad magna in tempor. <a href="about.html">More →</a>
+                            </p>
+                            <address>
+                                <strong>Novelty, Inc.</strong>
+                                <br>235 Roger Ave, Suite 356
+                                <br>San Francisco, CA 12345
+                                <br>
+                                <abbr title="Phone">P:</abbr>(123) 456-7890
+                            </address>
+                        </aside>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <aside class="widget wow bounceInUp">
+                            <div class="widget-header">
+                                <h4>Latest from Blog</h4>
+                            </div>
+                            <ul class="post-list">
+                                <li>
+                                    <div class="details">
+                                        <h5 class="title"><a href="post.html" rel="">Incididunt occaecat officia nostrud ullamco officia.</a>
+                      </h5>
+                                        <div class="meta">December 27, 2013</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="details">
+                                        <h5 class="title"><a href="post.html" rel="bookmark">Aliqua sunt dolore pariatur et quis non ex ad in dolore officia.</a>
+                      </h5>
+                                        <div class="meta">December 26, 2013</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="details">
+                                        <h5 class="title"><a href="post.html" rel="bookmark">Consectetur magna dolor tempor elit occaecat in commodo.</a>
+                      </h5>
+                                        <div class="meta">December 25, 2013</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <aside class="widget wow bounceInUp">
+                            <div class="widget-header">
+                                <h4>Elsewhere</h4>
+                            </div>
+                            <ul class="list-inline footer-social">
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'new/images/social/facebook.png' %}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'new/images/social/twitter.png' %}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'new/images/social/linkedin.png' %}" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="widget wow bounceInUp">
+                            <div class="widget-header">
+                                <h4>Twitter Feeds</h4>
+                            </div>
+                            <div class="tweets" data-username="twitter" data-count="1">
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <aside class="widget wow bounceInUp">
+                            <div class="widget-header">
+                                <h4>
+                    <img src="{% static 'new/images/mailchimp.png' %}" alt="" class="mailchimp-img wow bounceInDown" data-wow-delay="0.9s">&nbsp;MailChimp Newsletter</h4>
+                            </div>
+                            <div class="footer-newsletter">
+                                <p>Subscribe to our weekly Newsletter and stay tuned to all our updates, offers, freebies and more.</p>
+                                <form action="#" id="mc-form" method="post" class="subscription">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" placeholder="Your email address" id="mc-email">
+                                        <span class="input-group-btn">
+                        <button role="button" type="submit" class="btn btn-primary"><i class="fa fa-check"></i>
+                        </button>
+                      </span>
+                                    </div>
+                                    <p class="small text-muted text-center">We promise we wont sell your email address.</p>
+                                    <label for="mc-email" class="text-danger text-center mc-label"></label>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+    ++++++++++++++++++++++++++
+    // Footer Bottom
+    ++++++++++++++++++++++++++
+    -->
+        <section id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="images/logo.png" alt="novelty-logo" class="footer-logo">
+                        <p class="copyright">
+                            © 2014-15 | Novelty is crafted with <i class="fa fa-heart"></i> in Hunza.
+                        </p>
+                    </div>
+                    <div class="col-md-5 pull-right pt20 col-sm-6">
+                        <nav id="footer-nav" class="text-right">
+                            <ul class="list-inline">
+                                <li><a href="#">Jobs <span class="label label-info">We are hiring</span></a>
+                                </li>
+                                <li><a href="#">Terms</a>
+                                </li>
+                                <li><a href="#">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <div id="back-to-top">
+        <a class="back-to-top" data-scroll href="#top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    <!-- Main Scripts -->
+    <script src="{% static 'new/javascripts/modernizr.js' %}"></script>
+    <script src="{% static 'new/javascripts/jquery.js' %}"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $('.dropdown-submenu a.test').on("click", function(e)
+            {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+    <script src="{% static 'new/javascripts/bootstrap.js' %}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'new/javascripts/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'new/javascripts/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'new/javascripts/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'new/javascripts/wow.min.js' %}"></script>
+    <script src="{% static 'new/javascripts/mail.js' %}"></script>
+    <script src="{% static 'new/javascripts/ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'new/javascripts/smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'new/javascripts/lightGallery.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'new/javascripts/twitter/jquery.tweet.js' %}"></script>
+
+    <!-- Include the Google Maps API library - required for embedding maps -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'new/javascripts/custom.js' %}"></script>
+    <script src="{% static 'new/javascripts/jquery.bxslider.min.js' %}"></script>
+    <!-- 
+    ***********************************
+   ///////////Styles Switcher ONLY FOR DEMO ( STARTS HERE)
+   ***********************************
+    -->
+    <script src="{% static 'new/javascripts/switcher.js' %}"></script>
+
+    <!-- 
+    ***********************************
+   ///////////Styles Switcher ONLY FOR DEMO ENDS HERE
+   ***********************************
+    -->
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) 
+        {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-40566302-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

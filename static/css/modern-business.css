@@ -1,0 +1,144 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+  background :  #4b951c;
+  width: 100%;
+  height:auto;
+}
+
+.contentpage {
+	background-color : #fff;
+	border-radius : 50px;
+}
+
+
+#recherche {
+	background : #ededed;
+	padding : 30px;
+	border-radius : 20px;
+}
+
+.bouton {
+	background-color : #ff8000;
+}
+
+#moncontainer {
+	
+	background-color: white;
+	width : 100%;
+	margin-bottom: 20px;
+}
+
+
+#breadcrumbList {
+	margin-top : 50px;
+}
+
+#monTab {
+  
+  height:100%;
+  margin-top : 30px;
+  border-radius : 30px;
+}
+
+#myTabContent {
+	background-color: rgba(203,208,211,1.0);
+	padding : 10px;
+	border-radius : 10px;
+}
+
+.bg {
+	background-color : white;
+	color : orange;
+}
+
+/* Couleur utilisée pour les liens */
+.bg .navbar-nav > li > a {
+ color: #95241c;
+ font-weight: bold;
+}
+
+div .join li {
+	display : inline;
+	list-style : none;
+	
+}
+
+div .join {
+	padding-left : 15%;
+	
+}
+
+.monBouton {
+	background-color : #4b951c;
+}
+
+#myTab > li > a {
+	color : #95241c;
+	font-weight : bold;
+}
+
+#arinwa {
+	margin-top : 20px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+  
+  .membres {
+  	
+		margin-left: 50px;
+	}
+	
+	div .join {
+		position : fixed;
+		right : -0.9em;
+		top : 30%;
+		z-index: 1000;
+	
+	}
+	
+	div .join li {
+		display : block;
+		margin : 0 0 -0.3em 0;
+	}
+	
+	.bouge:hover {
+		margin-left : 10px;
+	}
+	
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+#carouselExampleIndicators {
+	width: 95%;
+	margin-left : 30px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.small {
+	color : orange;
+	font-weight: italic;
+}
+

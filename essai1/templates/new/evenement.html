@@ -1,0 +1,48 @@
+{% load static %}
+{% load i18n %}
+{% include 'new/_header.html'%}
+<div class="container">
+<div class="row" style="margin-top: 100px">
+    <div class="services" style="margin-top: 20px; margin-bottom: 50px;">
+        <div class="panel panel-success">
+			<div class="carousel slide" data-ride="carousel" id="c">
+				<ol class="carousel-indicators">
+					<li data-toggle="#c" data-slide-to="0" class="active"></li>
+					<li data-toggle="#c" data-slide-to="1"></li>
+					<li data-toggle="#c" data-slide-to="3"></li>
+				</ol>
+
+				<div class="carousel-inner">
+					{%for event in evenement%}
+					 {% if forloop.counter == 1%}
+					<div class="item active">
+						<img src="{{event.image.url}}" style="width: 100%; max-height: 400px; margin: 0 auto;"/>
+						<div class="carousel-caption>"
+                      		<p>{% trans event.description %}</p>
+                      		<address>Debut : <strong style="color: red">{{event.date_debut}}</strong></address>
+                    	</div>
+					</div>
+					{%else%}
+					<div class="item">
+						<img src="{{event.image.url}}" style="width: 100%; max-height: 400px; margin: 0 auto;"/>
+						<div class="carousel-caption>"
+                      		<p>{% trans event.description %}</p>
+                      		<address>Debut : <strong style="color: red">{{event.date_debut}}</strong></address>
+                    	</div>
+					</div>
+					{%endif%}
+					{% endfor %}
+				</div>
+				<a class="left carousel-control" href="#c" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#c" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+    </div>
+</div>
+</div>
+
+{% include 'new/_footer.html'%}
